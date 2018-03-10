@@ -14,6 +14,22 @@ public class ShootBehavior : MonoBehaviour {
   void Update() {
     if (Input.GetMouseButtonDown(0)) {
       animator.SetTrigger("shoot");
+
+      // TODO: Shooting
+      /*
+      GetComponent<AudioSource>().Play();
+
+      RaycastHit hit;
+      if(Physics.Raycast(bulletSpawn.position, bulletSpawn.forward, out hit, 300f, layerMask.value)) {
+        Debug.DrawLine(transform.position, hit.point, Color.magenta);
+        if(hit.transform.CompareTag("Enemy")) {
+          squibManager.GetComponent<SparkManager>().SpawnSpark(hit.point);
+        } else {
+          sparkManager.GetComponent<SparkManager>().SpawnSpark(hit.point);
+        }
+        hit.collider.BroadcastMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+      }
+      */
     }
   }
 }
